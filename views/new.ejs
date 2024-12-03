@@ -1,0 +1,43 @@
+<% layout("/layouts/boilerPlate") %>
+<!-- In bootstrap, screen layouts divided into 12 columns -->
+
+<div class="col-8 offset-2"><br>
+    <h2>Create new Listing</h2>
+    <form action="/listings" method="POST" class="needs-validation" novalidate>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Title</label>
+            <input type="text" name="listing[title]" placeholder="title" class="form-control" required> 
+            <div class="valid-feedback">Title looks good</div>
+            <div class="invalid-feedback">Give proper title</div>
+        </div>
+        
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Description</label>
+            <textarea placeholder="Write the description" name="listing[description]" class="form-control" required></textarea> 
+            <div class="valid-feedback">Nice description</div>
+            <div class="invalid-feedback">Give detailed description</div>
+        </div>
+
+    <div class="row">
+        <div class="mb-3 col-md-4">
+            <label for="exampleInputEmail1" class="form-label">Price</label>
+            <input type="number" name="listing[price]" placeholder="Enter price" class="form-control" required> 
+           
+        </div>
+
+        <div class="mb-3 col-md-8">
+            <label for="exampleInputEmail1" class="form-label">Country</label>
+            <input type="text" name="listing[country]" placeholder="Enter country" class="form-control" required> 
+        </div>
+    </div>
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Location</label>
+            <input type="text" name="listing[location]" placeholder="Set Location" class="form-control" required> 
+        </div>
+
+        <center><button class="btn btn-primary">Create</button></center><br>
+    </form>
+</div>
+ 

@@ -1,0 +1,42 @@
+<% layout("/layouts/boilerPlate") %>
+<% if(success && success.length) { %>
+<div class="alert alert-success alert-dismissible fade show col-md-5 offset-3" role="alert" role="alert">
+    <center><%= success %></center>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+    </button>
+</div>
+<% } %>
+
+<% if (error && error.length) { %>
+    <div class="alert alert-danger alert-dismissible fade show col-md-5 offset-3">
+        <center><%= error %></center>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+        </button>
+    </div>
+<% } %>
+
+<body>
+    <!-- <form action="/listings/new" method="GET">
+        <button>Add</button>
+    </form> -->
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+ 
+<% for(allList of allLists) {%>
+    <a href="/listings/<%= allList._id %>">
+    <div class="card col">
+        <img src="<%= allList.image %>" class="card-img-top" alt="listing_image"  style="height:20rem">
+        <div class="card-img-overlay"></div>
+        <div class="card-body">
+            <p class="card-text"> 
+            <b><%= allList.title %> <br></b>
+            &#8377;
+            <b><%= allList.price.toLocaleString("en-IN") %></b>/night
+            </p>
+        </div>
+    </div>
+    </a>
+
+<% } %>   
+</div>   
+</body>
+ 

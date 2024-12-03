@@ -1,0 +1,48 @@
+<% layout("/layouts/boilerPlate") %>
+
+<br>
+<div class="card col-7 offset-2">
+    <img src="<%= detail.image %>" class="card-img-top showImg" alt="listing_image">
+    <div class="card-body">
+        <b><p class="card-text"><%= detail.title %></p></b>
+        <p class="card-text"><%= detail.description %></p>
+        <p class="card-text">&#8377;<%= detail.price.toLocaleString("en-IN") %></p>
+        <p class="card-text"><%= detail.location %></p>
+        <p class="card-text"><%= detail.country %></p>
+    </div>
+
+    <div class="card-body inline">
+        <form method="GET" action="/listings/<%= detail._id %>/edit">
+            <button class="btn btn-primary">Edit</button>
+        </form> 
+        <form method="POST" action="/listings/<%= detail._id %>?_method=DELETE">
+            <button class="btn btn-primary">Delete</button>
+        </form>
+    </div>
+
+    <div>
+        <h4>Leave a review</h4>
+        <form action="/listings/<%= detail._id %>/review" method="POST">
+            <div class="mb-3 mt-3">
+                <label> Rate this place </label>
+                <input type="range" min="1" max="5"  id="rating" name="review[rating]" class="form-range">
+            </div> 
+            <div>
+                <label>Comment here</label>
+                <textarea id="comment" name="review[comment]" cols="100" rows="5" class="form-control" placeholder =  "Write something here..." ></textarea> 
+            </div><br>
+            <button class="btn btn-primary">Submit</button>
+        </form>
+
+    <hr/> 
+        <div>
+            <h4>All Reviews</h4>
+            <% for(let revi of detail.review) { %>
+                <p><%= revi.comment %></p>
+                <p>Rating: <%= revi.rating %></p>
+                <p><i>Created at: <%= revi.createdAt %> </i></p> 
+                <hr/>
+            <% } %> 
+        </div> 
+    </div>
+</div>
