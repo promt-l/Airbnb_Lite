@@ -11,12 +11,20 @@ body{
 
 .navbar{
     height:5rem;
+    border: none;
+    border-radius:10px;
 }
 
 .nav-item{
     font-size: large;
 }
-
+.company{
+    color: #fe424d;
+    /* display:inline;
+    justify-content: center; */
+    font-weight: bold;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 .fa-regular{
     color:#fe424d;
     font-size: 2rem;
@@ -60,6 +68,23 @@ body{
     text-align: center;
     align-items: space-evenly;
     flex-wrap:wrap;
+}
+
+.fa-house{
+    color:#fe424d;
+    font-size:1.3rem;
+}
+.fa-user{
+    color:white;
+    font-size:1.15rem;
+    padding:0.31rem;
+    background-color: #6a6a6a;
+    border:#6a6a6a solid 1px;
+    border-radius: 50%;
+}
+
+.navbar .dropdown-toggle::after {
+    display: none; /* Hides the dropdown arrow */
 }
 
 .card-img-top{
@@ -117,4 +142,65 @@ input:focus, textarea:focus {
 
 .signup{
     background-color: rgb(39, 174, 39) !important;
+}
+
+@keyframes rotateEarth {
+    0% {
+        transform: scale(1)  ;  
+    }
+    20% {
+        transform: scale(20)  ; 
+    }
+    100% {
+        transform: scale(1.5) rotate(360deg);  
+    }
+}
+
+#earth-icon i {
+    display: inline-block;
+    cursor: pointer;
+}
+
+#earth-icon:active i{
+    animation: rotateEarth 2s linear infinite;  
+}
+
+.fa-plus-circle{
+    color:#fe424d;
+    padding:2px;
+    font-size: larger;
+    border:2px;
+}
+
+.new{
+    list-style: none;
+}
+
+.form-control{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.fa-searchengin{
+    color:white;
+    font-size: 1.5rem;
+}
+.fa-searchengin:hover{
+    
+    color:#fe424d;
+}
+.btn-outline-success:hover{
+    background-color: rgb(251, 201, 201) !important;
+}
+
+.search-input,.search-click {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2)  ;  
+    transition: box-shadow 0.3s ease-in-out  ; 
+}
+
+.search-input,.search-click:focus {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);  
+    outline: none;  
 }
